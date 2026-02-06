@@ -43,12 +43,3 @@ export const mockMessages: Record<string, MockMessage[]> = {
     { id: "m6", role: "assistant", content: "I'll create a modern landing page with those sections. Here's my approach:\n\nThe hero section uses a large heading with a gradient text effect, a subtitle, and two CTAs (primary + secondary). Below that, a features grid with 6 cards in a 3-column layout, each with an icon, title, and description.\n\nThe pricing section has 3 tiers side by side with the middle one highlighted. Finally, a full-width CTA section with a background gradient.\n\nLet me build this out — I'm writing the HTML and Tailwind CSS now.", createdAt: "9:16 AM" },
   ],
 };
-
-export const mockModes = [
-  { id: "research", name: "Research", icon: "search" },
-  { id: "code", name: "Code", icon: "code" },
-  { id: "slides", name: "Slides", icon: "presentation" },
-  { id: "sheets", name: "Sheets", icon: "table" },
-  { id: "docs", name: "Docs", icon: "file-text" },
-  { id: "canvas", name: "Canvas", icon: "pen-tool" },
-] as const;

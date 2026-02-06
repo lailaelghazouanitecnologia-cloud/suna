@@ -1,4 +1,4 @@
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { Upload, PanelRightOpen } from "lucide-react";
 import { ChatInput } from "@/components/chat-input";
 import { ThreadMessages } from "@/components/thread-messages";
@@ -6,7 +6,6 @@ import { mockMessages, mockThreads } from "@/lib/mock-data";
 
 export default function ThreadPage() {
   const { threadId } = useParams();
-  const navigate = useNavigate();
 
   const messages = mockMessages[threadId ?? ""] ?? [];
   const thread = mockThreads.find((t) => t.id === threadId);
@@ -17,7 +16,7 @@ export default function ThreadPage() {
 
   return (
     <div className="flex flex-col h-full w-full overflow-hidden">
-      {/* ── Header: sticky h-12 sm:h-14 matching legacy ── */}
+      {/* Header — matches legacy: bg-background sticky top-0 z-20 h-12 sm:h-14 */}
       <header className="bg-background sticky top-0 z-20 w-full h-12 sm:h-14 flex-shrink-0">
         <div className="h-full flex items-center justify-between px-3 sm:px-4">
           {/* Left — project name */}
@@ -40,11 +39,11 @@ export default function ThreadPage() {
         </div>
       </header>
 
-      {/* ── Messages ── */}
+      {/* Messages */}
       <ThreadMessages messages={messages} />
 
-      {/* ── Chat input at bottom ── */}
-      <div className="flex-shrink-0 bg-background px-3 sm:px-4">
+      {/* Chat input — at bottom, matches legacy thread layout */}
+      <div className="flex-shrink-0 relative bg-background px-4">
         <div className="w-full max-w-3xl mx-auto">
           <ChatInput onSubmit={handleSubmit} autoFocus />
         </div>
