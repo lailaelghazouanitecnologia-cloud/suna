@@ -3,7 +3,7 @@ import { AuthGuard, ShellLayout } from "@/modules/shell";
 
 import AuthPage from "@/pages/auth";
 import DashboardPage from "@/pages/dashboard";
-import ChatPage from "@/pages/chat";
+import ThreadPage from "@/pages/thread";
 import NotFoundPage from "@/pages/not-found";
 
 export const router = createBrowserRouter([
@@ -19,7 +19,7 @@ export const router = createBrowserRouter([
     ),
     children: [
       { index: true, element: <DashboardPage /> },
-      { path: "thread/:threadId", element: <ChatPage /> },
+      { path: "thread/:threadId", element: <ThreadPage /> },
 
       /* future modules will register their routes here */
     ],
